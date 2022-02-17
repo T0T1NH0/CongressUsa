@@ -7,6 +7,8 @@
 body {
   height: 100vh;
   line-height: 1.6;
+  min-width: 320px;
+  background-color: #294674;
 }
 
 header {
@@ -21,6 +23,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 320px;
   height: 10vh;
   background-color: grey;
   font-family: helvetica;
@@ -31,12 +34,16 @@ a {
   font-weight: bold;
   color: #fff;
 }
+li {
+  list-style-type: none;
+}
 
 .bannerContainer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
-  height: 50%;
+  height: 12vh;
 }
 
 .logoContainer {
@@ -60,63 +67,106 @@ a {
   height: 2vh;
   padding-right: 7px;
 }
-
 .navContainer {
   display: flex;
-  min-height: 10vh;
+  padding: 12px 0px 10px 10px;
   background-color: grey;
+  height: 8vh;
 }
 
 .navContainer a {
   color: #fff;
+  padding: 0px 5px;
 }
+.ulMenu {
+  background: rgb(179, 169, 169);
+  height: 0vh;
+  border-radius: 7px;
+  overflow: visible;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+}
+@media (min-width: 769px) {
+  .ham {
+    display: none;
+  }
 
-.ham {
-  display: none;
-  background-color: white;
-  cursor: pointer;
-  border: none;
-  border-radius: 10px;
-  height: 40px;
-  width: 40px;
-  margin-top: 5px;
-}
+  .liHomeMobile {
+    display: none;
+  }
 
-.ham span {
-  background-color: black;
-  display: block;
-  margin: 3px;
-  height: 5px;
-  border-radius: 2px;
-}
+  .liMenu {
+    color: #fff;
+    font-weight: bold;
+    font-family: helvetica;
+    cursor: pointer;
+  }
 
-.linksMenu {
-  display: flex;
-}
-.linksMenu li {
-  list-style-type: none;
+  .liMenu:hover .ulMenu {
+    opacity: 1;
+    visibility: visible;
+    height: 8vh;
+  }
 }
 
 @media (max-width: 768px) {
+  .navContainer {
+    align-items: flex-start;
+    padding: 0;
+  }
+  .navContainer a {
+    padding: 0;
+  }
+
   .ham {
     display: block;
-    cursor: pointer;
     position: absolute;
     transition: 0.2s 0.1s;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
   }
 
-  .linksMenu {
-    margin-top: 9vh;
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    height: 20vh;
+  .ham span {
+    background-color: black;
+    display: block;
+    margin: 3px;
+    height: 5px;
+    border-radius: 2px;
   }
-  .linksMenu li {
+
+  .liMenu {
+    display: none;
+    margin-top: 40px;
+    flex-direction: column;
+    height: 10vh;
+    background-color: gray;
     width: 100%;
+  }
+
+  .liMenu a {
+    padding-left: 10px;
+  }
+
+  .liHomeDesktop {
+    display: none;
+  }
+
+  .liHomeMobile {
+    display: flex;
+  }
+  .ulMenu {
+    width: 30%;
+    text-align: center;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 7px;
   }
 }
-
 @keyframes muestraMenu {
   from {
     opacity: 0;
@@ -126,9 +176,9 @@ a {
   }
 }
 
-.linksMenu.activado {
+.liMenu.activado {
   display: flex;
-  animation: muestraMenu 100ms ease-in-out both;
+  animation: muestraMenu 0.3s ease-in-out both;
 }
 
 .ham.girar:hover {
