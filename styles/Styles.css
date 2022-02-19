@@ -5,7 +5,6 @@
 }
 
 body {
-  height: 100vh;
   line-height: 1.6;
   min-width: 320px;
   background-color: #294674;
@@ -37,7 +36,6 @@ a {
 li {
   list-style-type: none;
 }
-
 .bannerContainer {
   display: flex;
   justify-content: space-between;
@@ -78,7 +76,10 @@ li {
   color: #fff;
   padding: 0px 5px;
 }
-.ulMenu {
+
+.ulMenu,
+.ulMenu2,
+.ulMenu3 {
   background: rgb(179, 169, 169);
   height: 0vh;
   border-radius: 7px;
@@ -87,6 +88,7 @@ li {
   opacity: 0;
   visibility: hidden;
 }
+
 @media (min-width: 769px) {
   .ham {
     display: none;
@@ -96,7 +98,9 @@ li {
     display: none;
   }
 
-  .liMenu {
+  .liMenu,
+  .liMenu2,
+  .liMenu3 {
     color: #fff;
     font-weight: bold;
     font-family: helvetica;
@@ -108,22 +112,31 @@ li {
     visibility: visible;
     height: 8vh;
   }
+  .liMenu2:hover .ulMenu2 {
+    opacity: 1;
+    visibility: visible;
+    height: 8vh;
+  }
+  .liMenu3:hover .ulMenu3 {
+    opacity: 1;
+    visibility: visible;
+    height: 8vh;
+  }
 }
 
 @media (max-width: 768px) {
   .navContainer {
     align-items: flex-start;
+    flex-direction: column;
     padding: 0;
+    height: 9vh;
   }
-  .navContainer a {
-    padding: 0;
-  }
-
   .ham {
     display: block;
     position: absolute;
     transition: 0.2s 0.1s;
     background-color: white;
+    margin: 3px 0px 0px 7px;
     border: none;
     border-radius: 10px;
     height: 40px;
@@ -139,32 +152,27 @@ li {
     border-radius: 2px;
   }
 
-  .liMenu {
+  .liMenu,
+  .liMenu2,
+  .liMenu3 {
     display: none;
-    margin-top: 40px;
-    flex-direction: column;
-    height: 10vh;
-    background-color: gray;
-    width: 100%;
   }
 
-  .liMenu a {
-    padding-left: 10px;
+  .ulMenu,
+  .ulMenu2,
+  .ulMenu3 {
+    width: 30%;
+    text-align: center;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 7px;
   }
-
   .liHomeDesktop {
     display: none;
   }
 
   .liHomeMobile {
     display: flex;
-  }
-  .ulMenu {
-    width: 30%;
-    text-align: center;
-    padding-right: 10px;
-    margin-left: 10px;
-    margin-bottom: 7px;
   }
 }
 @keyframes muestraMenu {
@@ -177,7 +185,21 @@ li {
 }
 
 .liMenu.activado {
+  margin-top: 47px;
+  padding-top: 5px;
+}
+.liMenu.activado .liHomeMobile {
+  padding-bottom: 5px;
+}
+
+.liMenu.activado,
+.liMenu2.activado,
+.liMenu3.activado {
   display: flex;
+  flex-direction: column;
+  padding-left: 5px;
+  background-color: gray;
+  width: 100%;
   animation: muestraMenu 0.3s ease-in-out both;
 }
 
