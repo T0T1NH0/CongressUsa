@@ -7,23 +7,24 @@
 body {
   line-height: 1.6;
   min-width: 320px;
+  min-height: 100vh;
   background-color: #294674;
 }
 
 header {
-  height: 20vh;
+  min-height: 20vh;
   min-width: 320px;
-  background-color: #294674;
+  background-color: #5a7aad;
 }
 main {
-  height: 70vh;
+  min-height: 70vh;
 }
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: 320px;
-  height: 10vh;
+  min-height: 10vh;
   background-color: grey;
   font-family: helvetica;
 }
@@ -81,26 +82,36 @@ li {
 .ulMenu2,
 .ulMenu3 {
   background: rgb(179, 169, 169);
-  height: 0vh;
   border-radius: 7px;
-  overflow: visible;
   z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
 }
 
 @media (min-width: 769px) {
+  .navContainer {
+    justify-content: space-around;
+  }
   .ham {
     display: none;
+  }
+
+  .ulMenu,
+  .ulMenu2,
+  .ulMenu3 {
+    height: 0vh;
+    width: 60%;
+    overflow: visible;
+    opacity: 0;
+    visibility: hidden;
   }
 
   .liHomeMobile {
     display: none;
   }
+  .arrow {
+    height: 15px;
+  }
 
-  .liMenu,
-  .liMenu2,
-  .liMenu3 {
+  .liMenu {
     color: #fff;
     font-weight: bold;
     font-family: helvetica;
@@ -151,7 +162,15 @@ li {
     height: 5px;
     border-radius: 2px;
   }
-
+  .clickMenu {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5x;
+    padding-bottom: 10px;
+  }
+  .arrow {
+    height: 17px;
+  }
   .liMenu,
   .liMenu2,
   .liMenu3 {
@@ -161,11 +180,11 @@ li {
   .ulMenu,
   .ulMenu2,
   .ulMenu3 {
-    width: 30%;
+    width: 25%;
     text-align: center;
+    margin-top: 8px;
     padding-right: 10px;
     margin-left: 10px;
-    margin-bottom: 7px;
   }
   .liHomeDesktop {
     display: none;
@@ -173,6 +192,28 @@ li {
 
   .liHomeMobile {
     display: flex;
+  }
+  .liMenu.activado {
+    margin-top: 47px;
+    padding-top: 5px;
+  }
+  .liMenu.activado .liHomeMobile {
+    padding-bottom: 5px;
+  }
+
+  .liMenu.activado,
+  .liMenu2.activado,
+  .liMenu3.activado {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+    background-color: gray;
+    width: 100%;
+    animation: muestraMenu 0.3s ease-in-out both;
+  }
+
+  .ham.girar:hover {
+    transform: rotate(360deg);
   }
 }
 @keyframes muestraMenu {
@@ -182,27 +223,4 @@ li {
   to {
     opacity: 1;
   }
-}
-
-.liMenu.activado {
-  margin-top: 47px;
-  padding-top: 5px;
-}
-.liMenu.activado .liHomeMobile {
-  padding-bottom: 5px;
-}
-
-.liMenu.activado,
-.liMenu2.activado,
-.liMenu3.activado {
-  display: flex;
-  flex-direction: column;
-  padding-left: 5px;
-  background-color: gray;
-  width: 100%;
-  animation: muestraMenu 0.3s ease-in-out both;
-}
-
-.ham.girar:hover {
-  transform: rotate(360deg);
 }
