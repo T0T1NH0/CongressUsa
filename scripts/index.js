@@ -1,9 +1,9 @@
 // HEADER
 
-const ham = document.querySelector('.ham');
-const enlaces = document.querySelector('.liMenu');
-const enlaces2 = document.querySelector('.liMenu2');
-const enlaces3 = document.querySelector('.liMenu3');
+const ham = document.getElementById('hamburger');
+const enlaces = document.getElementById('liMenu');
+const enlaces2 = document.getElementById('liMenu2');
+const enlaces3 = document.getElementById('liMenu3');
 
 ham.addEventListener('click', () => {
   enlaces.classList.toggle('activado');
@@ -17,27 +17,29 @@ ham.addEventListener('click', () => {
 let hideTextBtn = document.getElementById('hideTextBtn');
 let hideText = document.getElementById('hideText');
 
-hideTextBtn.addEventListener('click', () => toggleText());
-
-function toggleText() {
+const toggleText = () => {
   hideText.classList.toggle('show');
 
   hideText.classList.contains('show')
     ? (hideTextBtn.innerHTML = 'Read Less')
     : (hideTextBtn.innerHTML = 'Read More');
-}
+};
+
+hideTextBtn.addEventListener('click', () => toggleText());
 
 // GO TOP
 
-window.onscroll = function () {
+let goTopContainer = document.querySelector('.goTopContainer');
+
+window.onscroll = () => {
   if (document.documentElement.scrollTop > 100) {
-    document.querySelector('.goTopContainer').classList.add('show');
+    goTopContainer.classList.add('show');
   } else {
-    document.querySelector('.goTopContainer').classList.remove('show');
+    goTopContainer.classList.remove('show');
   }
 };
 
-document.querySelector('.goTopContainer').addEventListener('click', () => {
+goTopContainer.addEventListener('click', () => {
   window.scrollTo({
     top: 0,
     behavior: 'smooth',

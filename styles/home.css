@@ -18,6 +18,9 @@
   background-color: black;
 }
 @media (max-width: 1023px) {
+  * {
+    text-align: center;
+  }
   article {
     display: flex;
     flex-direction: column;
@@ -46,10 +49,6 @@
   .backgrounHistory {
     font-size: 18px;
     margin-top: 0;
-    margin-left: 30px;
-  }
-  .buttonReadMore {
-    margin-left: 40px;
   }
   .show {
     display: flex;
