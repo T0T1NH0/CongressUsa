@@ -15,6 +15,9 @@ header {
   min-height: 20vh;
   min-width: 320px;
   background-color: #5a7aad;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 0 10px 0 black;
 }
 main {
   min-height: 70vh;
@@ -24,9 +27,14 @@ footer {
   justify-content: center;
   align-items: center;
   min-width: 320px;
-  min-height: 10vh;
+  min-height: 7.5vh;
   background-color: grey;
   font-family: helvetica;
+  box-shadow: 0 0 10px 0 black;
+}
+footer a {
+  color: black;
+  font-weight: normal;
 }
 a {
   text-decoration: none;
@@ -36,6 +44,9 @@ a {
 }
 li {
   list-style-type: none;
+}
+table {
+  box-shadow: 0 0 15px 0 black;
 }
 .bannerContainer {
   display: flex;
@@ -81,19 +92,40 @@ li {
 .ulMenu,
 .ulMenu2,
 .ulMenu3 {
-  background: rgb(179, 169, 169);
+  background: rgb(165, 161, 161);
   border-radius: 7px;
   z-index: 1000;
 }
-
-@media (min-width: 769px) {
-  .navContainer {
+.hide {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .menuContainer {
+    display: flex;
+    width: 100%;
     justify-content: space-around;
   }
   .ham {
     display: none;
   }
+  .liHomeMobile {
+    display: none;
+  }
+  .arrow {
+    height: 15px;
+    width: 19px;
+    padding-top: 3px;
+  }
+  .goTopContainer {
+    display: none;
+  }
 
+  .liMenu {
+    color: #fff;
+    font-weight: bold;
+    font-family: helvetica;
+    cursor: pointer;
+  }
   .ulMenu,
   .ulMenu2,
   .ulMenu3 {
@@ -106,26 +138,65 @@ li {
     overflow: visible;
     opacity: 0;
     visibility: hidden;
+    border-radius: 0px 0px 7px 7px;
   }
 
-  .liHomeMobile {
-    display: none;
+  .liHomeDesktop:hover {
+    background: rgb(165, 161, 161);
+    transition: 0.3s all ease-in-out;
+    border-radius: 7px;
   }
-  .arrow {
-    height: 15px;
+  .liMenu:hover {
+    background: rgb(165, 161, 161);
+    transition: 0.3s all ease-in-out;
+    border-radius: 7px 7px 0px 0px;
+  }
+  .liMenu2:hover {
+    background: rgb(165, 161, 161);
+    transition: 0.3s all ease-in-out;
+    border-radius: 7px 7px 0px 0px;
+  }
+  .liMenu3:hover {
+    background: rgb(165, 161, 161);
+    transition: 0.3s all ease-in-out;
+    border-radius: 7px 7px 0px 0px;
   }
 
-  .liMenu {
-    color: #fff;
-    font-weight: bold;
-    font-family: helvetica;
-    cursor: pointer;
+  .liMenu:hover .arrow {
+    transform: rotate(-90deg);
+    transition: 0.3s;
+  }
+
+  .liMenu2:hover .arrow {
+    transform: rotate(-90deg);
+    transition: 0.3s;
+  }
+  .liMenu3:hover .arrow {
+    transform: rotate(-90deg);
+    transition: 0.3s;
+  }
+
+  .ulMenu li:hover {
+    background: rgb(150, 143, 143);
+    border-radius: 7px;
+    transition: 0.3s all ease-in-out;
+  }
+  .ulMenu2 li:hover {
+    background: rgb(150, 143, 143);
+    border-radius: 7px;
+    transition: 0.3s all ease-in-out;
+  }
+  .ulMenu3 li:hover {
+    background: rgb(150, 143, 143);
+    border-radius: 7px;
+    transition: 0.3s all ease-in-out;
   }
 
   .liMenu:hover .ulMenu {
     opacity: 1;
     visibility: visible;
     height: 10vh;
+    width: 100%;
     transform: rotate(0);
     transition: 0.3s;
   }
@@ -133,6 +204,7 @@ li {
     opacity: 1;
     visibility: visible;
     height: 10vh;
+    width: 100%;
     transform: rotate(0);
     transition: 0.3s;
   }
@@ -140,24 +212,35 @@ li {
     opacity: 1;
     visibility: visible;
     height: 10vh;
+    width: 100%;
     transform: rotate(0);
     transition: 0.3s;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1022px) {
+  header {
+    min-height: 10vh;
+  }
+  footer {
+    height: 10vh;
+    font-size: 13px;
+  }
   .navContainer {
     align-items: flex-start;
     flex-direction: column;
     padding: 0;
-    height: 9vh;
+    height: 0;
+  }
+  .menuContainer {
+    width: 100%;
+    background-color: #5a7aad;
   }
   .ham {
     display: block;
-    position: absolute;
     transition: 0.2s 0.1s;
     background-color: white;
-    margin: 3px 0px 0px 7px;
+    margin-right: 8px;
     border: none;
     border-radius: 10px;
     height: 40px;
@@ -172,30 +255,66 @@ li {
     height: 5px;
     border-radius: 2px;
   }
-  .clickMenu {
+  .clickMenu,
+  .clickMenu2,
+  .clickMenu3 {
+    display: none;
+    width: 100%;
+  }
+  .clickMenu.activado {
     display: flex;
-    flex-direction: column;
-    padding-top: 5x;
-    padding-bottom: 10px;
+    justify-content: flex-end;
+    transition: 0.3s all ease-in-out;
+  }
+  .clickMenu2.activado {
+    display: flex;
+    justify-content: flex-end;
+    transition: 0.3s all ease-in-out;
+  }
+  .clickMenu3.activado {
+    display: flex;
+    justify-content: flex-end;
+    transition: 0.3s all ease-in-out;
+  }
+  .liMenu:hover .arrow {
+    transform: rotate(-90deg);
+    transition: 0.3s;
+  }
+
+  .liMenu2:hover .arrow {
+    transform: rotate(-90deg);
+    transition: 0.3s;
+  }
+  .liMenu3:hover .arrow {
+    transform: rotate(-90deg);
+    transition: 0.3s;
   }
   .arrow {
     height: 17px;
+    padding-right: 5px;
+    padding-top: 5px;
   }
   .liMenu,
   .liMenu2,
   .liMenu3 {
     display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 5x;
+    padding-bottom: 10px;
+    padding-right: 5px;
   }
 
   .ulMenu,
   .ulMenu2,
   .ulMenu3 {
+    background-color: #44546d;
     width: 25%;
     text-align: center;
-    margin-top: 8px;
     padding-right: 10px;
     margin-left: 10px;
   }
+
   .liHomeDesktop {
     display: none;
   }
@@ -203,12 +322,9 @@ li {
   .liHomeMobile {
     display: flex;
   }
-  .liMenu.activado {
-    margin-top: 47px;
-    padding-top: 5px;
-  }
   .liMenu.activado .liHomeMobile {
     padding-bottom: 5px;
+    padding-top: 10px;
   }
 
   .liMenu.activado,
@@ -217,13 +333,59 @@ li {
     display: flex;
     flex-direction: column;
     padding-left: 5px;
-    background-color: gray;
-    width: 100%;
     animation: muestraMenu 0.3s ease-in-out both;
   }
 
   .ham.girar:hover {
     transform: rotate(360deg);
+  }
+
+  .goTopContainer {
+    display: flex;
+    justify-content: end;
+    margin-left: 20px;
+    position: fixed;
+    top: 28rem;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .goTopBtn {
+    width: 0rem;
+    height: 0rem;
+    background: #5a7aad;
+    border-radius: 50%;
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.6s;
+    z-index: -1;
+  }
+
+  .arrowUp {
+    position: absolute;
+    font-size: 1.7rem;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: #fff;
+    transition: 0.6s;
+  }
+
+  .show {
+    z-index: 10;
+  }
+
+  .show .goTopBtn {
+    animation: popup 3s ease in out;
+    width: 3.6rem;
+    height: 3.6rem;
+    z-index: 11;
+  }
+
+  .show .arrowUp {
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 @keyframes muestraMenu {
@@ -232,5 +394,19 @@ li {
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes popup {
+  0% {
+    width: 0rem;
+    height: 0rem;
+  }
+  50% {
+    width: 8rem;
+    height: 8rem;
+  }
+  100% {
+    width: 6.6rem;
+    height: 6.6rem;
   }
 }

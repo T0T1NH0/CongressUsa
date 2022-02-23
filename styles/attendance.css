@@ -1,3 +1,8 @@
+h2 {
+  font-family: helvetica;
+  color: white;
+}
+
 @media (max-width: 1023px) {
   .attendanceContainer {
     display: flex;
@@ -25,20 +30,6 @@
     margin-top: 15px;
     margin-bottom: 15px;
   }
-  .tableContainer h2 {
-    color: #fff;
-  }
-  table {
-    background-color: white;
-    border: #b2b2b2 1px solid;
-    border-collapse: collapse;
-    width: 90%;
-  }
-  td,
-  th {
-    border: black 1px solid;
-    padding: 5px;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -55,9 +46,9 @@
     font-family: helvetica;
     color: #fff;
     width: 40%;
-    margin-top: 15px;
+    margin-top: 20px;
+    margin-bottom: 15px;
   }
-
   .tableContainer {
     display: flex;
     flex-direction: column;
@@ -65,20 +56,35 @@
     text-align: center;
     font-family: helvetica;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    width: 40%;
   }
   .tableContainer h2 {
     color: #fff;
   }
-  table {
-    background-color: white;
-    border: #b2b2b2 1px solid;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  td,
-  th {
-    border: black 1px solid;
-    padding: 5px;
-  }
+}
+table {
+  background-color: white;
+  border: #b2b2b2 1px solid;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+}
+td,
+th {
+  padding: 5px;
+  border: 0.5px solid #ccc;
+}
+td {
+  font-size: small;
+}
+thead th {
+  font-weight: bold;
+}
+tbody tr:nth-child(odd) {
+  background-color: rgb(235, 236, 237);
+}
+
+tbody tr:nth-child(even) {
+  background-color: white;
 }

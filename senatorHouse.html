@@ -10,57 +10,52 @@
   </head>
   <body>
     <header>
-        <div class="bannerContainer">
-            <a
-              href="https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment"
-            >
-              <div class="logoContainer">
-                <img src="./assets/logo.png" />
-                <p>TGIF</p>
-              </div></a
-            >
-            <a href="mailto:info@tgif.net" class="emailContainer">
-              <img src="./assets/correo.jpg" />
-              <p>info@tgif.net</p>
-            </a>
+      <div class="bannerContainer">
+        <a href="https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment">
+          <div class="logoContainer">
+            <img src="./assets/logo.png"/>
+            <p>TGIF</p>
+          </div></a>
+          <button id="hamburger" class="ham">
+            <span class="sp1"></span>
+            <span class="sp2"></span>
+            <span class="sp3"></span>
+          </button>
+      </div>
+      <nav class="navContainer">
+        <ul class="menuContainer">
+        <li class="liHomeDesktop"><a href="home.html">Home</a></li>
+          <li id="liMenu" class="liMenu">
+            <a class="liHomeMobile" href="home.html">Home</a>
+            <a class="liSubMenu" href="#"><img src="./assets/bx-down-arrow.svg" class="arrow">Congress 113</a>
+            <div class="clickMenu">
+            <ul class="ulMenu">
+              <li><a href="congressHouse.html">House</a></li>
+              <li><a href="senatorHouse.html">Senate</a></li>
+            </ul>
           </div>
-          <nav class="navContainer">
-            <button id="hamburger" class="ham">
-              <span class="sp1"></span>
-              <span class="sp2"></span>
-              <span class="sp3"></span>
-            </button>
-              <li class="liHomeDesktop"><a href="home.html">Home</a></li>
-              <li id="liMenu" class="liMenu">
-                <a class="liHomeMobile" href="home.html">Home</a>
-                <div class="clickMenu">
-                <a class="liSubMenu" href="#">Congress 113<img src="./assets/bx-down-arrow.svg" class="arrow"></a>
-                <ul class="ulMenu">
-                  <li><a href="congressHouse.html">House</a></li>
-                  <li><a href="senatorHouse.html">Senate</a></li>
-                </ul>
-              </div>
-              </li>
-              <li id="liMenu2" class="liMenu2">
-                <div class="clickMenu">
-                <a class="liSubMenu2" href="#">Attendace<img src="./assets/bx-down-arrow.svg" class="arrow"></a>
-                <ul class="ulMenu2">
-                  <li><a href="attendanceHouse.html">House</a></li>
-                  <li><a href="attendanceSenator.html">Senate</a></li>
-                </ul>
-                </div>
-              </li>
-              <li id="liMenu3" class="liMenu3">
-                <div class="clickMenu">
-                <a class="liSubMenu3" href="#">Party Lotalty<img src="./assets/bx-down-arrow.svg" class="arrow"></a>
-                <ul class="ulMenu3">
-                  <li><a href="partyLoyaltyHouse.html">House</a></li>
-                  <li><a href="partyLoyaltySenators.html">Senate</a></li>
-              </li>
-              </div>
+          </li>
+          <li id="liMenu2" class="liMenu2">
+            <a class="liSubMenu2" href="#"><img src="./assets/bx-down-arrow.svg" class="arrow">Attendace</a>
+            <div class="clickMenu2">
+            <ul class="ulMenu2">
+              <li><a href="attendanceHouse.html">House</a></li>
+              <li><a href="attendanceSenator.html">Senate</a></li>
+            </ul>
+            </div>
+          </li>
+          <li id="liMenu3" class="liMenu3">
+            <a class="liSubMenu3" href="#"><img src="./assets/bx-down-arrow.svg" class="arrow">Party Lotalty</a>
+            <div class="clickMenu3">
+            <ul class="ulMenu3">
+              <li><a href="partyLoyaltyHouse.html">House</a></li>
+              <li><a href="partyLoyaltySenators.html">Senate</a></li>
+          </li>
+        </ul>
           </div>
-          </nav>
-      </header>
+      </div>
+      </nav>
+    </header>
       <main>
           <section>
               <div class="houseContainer">
@@ -68,6 +63,34 @@
                   <p class="textContainer">First convened in 1789, the composition and powers of the Senate are established in Article One of the U.S. Constitution. Each state is represented by two senators, regardless of population, who serve staggered six-year terms. The Senate has several exclusive powers not granted to the House, including consenting to treaties as a precondition to their ratification and consenting to or confirming appointments of Cabinet secretaries, federal judges, other federal executive officials, military officers, regulatory officials, ambassadors, and other federal uniformed officers, as well as trial of federal officials impeached by the House.
                 </p>
               </div>
+              <div class="formContainer">
+                <form action="send">
+                  <fieldset>
+                <label class="text">Filter By Party:</label>
+                <div>
+                  <label>Democrat</label>
+                  <input type="checkbox" id="democrat" value="html" checked>
+                </div>
+                <div>
+                  <label>Republican</label>
+                  <input type="checkbox" id="republican" value="css" checked>
+                </div>
+                <div>
+                  <label>Independent</label>
+                <input type="checkbox" id="independent" value="javascript" checked>
+              </div>  
+              </fieldset>
+              <fieldset class="selectStates">
+                <label class="text">Filter by State:</label>
+                <select name="turno" id="states" class="selector">
+                  <option value="allStates">All States</option>
+                  <option value="Brandsen">Brandsen</option>
+                  <option value="Perdi">perdi</option>
+                  <option value="Boluo">boluo</option>
+                </select>
+              </fieldset>
+            </form>
+          </div>
           </section>
           <section>
               <div class="tableContainer">
@@ -114,7 +137,12 @@
               </table>
             </div>
           </section>
-      </main>
+        </main>
+        <div class="goTopContainer">
+          <div class="goTopBtn">
+            <img src="./assets/bx-chevron-up.svg" class="arrowUp">
+          </div>
+        </div>
     <footer><p>© 2021 TGIF | All Rights Reserved</p></footer>
     <script src="./scripts/index.js"></script>
   </body>
