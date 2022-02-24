@@ -11,11 +11,17 @@
   <body>
     <header>
       <div class="bannerContainer">
-        <a href="https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment">
+        <a href="https://www.whitehouse.gov/the_press_office/TransparencyandOpenGovernment" target="_blank">
           <div class="logoContainer">
             <img src="./assets/logo.png"/>
             <p>TGIF</p>
           </div></a>
+          <a href="mailto:info@tgif.net" class="emailDesktop">
+          <div class="emailContainerDesktop">
+            <img src="./assets/bx-envelope.svg">
+            <p>info@tgif.net</p>
+          </div>
+          </a>
           <button id="hamburger" class="ham">
             <span class="sp1"></span>
             <span class="sp2"></span>
@@ -24,32 +30,32 @@
       </div>
       <nav class="navContainer">
         <ul class="menuContainer">
-        <li class="liHomeDesktop"><a href="home.html">Home</a></li>
+        <li class="liHomeDesktop"><a href="home.html"><img src="./assets/bx-home.svg" class="homeIcon">Home</a></li>
           <li id="liMenu" class="liMenu">
-            <a class="liHomeMobile" href="home.html">Home</a>
+            <a class="liHomeMobile" href="home.html"><img src="./assets/bx-home.svg" class="homeIconMobile">Home</a>
             <a class="liSubMenu" href="#"><img src="./assets/bx-down-arrow.svg" class="arrow">Congress 113</a>
             <div class="clickMenu">
             <ul class="ulMenu">
-              <li><a href="congressHouse.html">House</a></li>
-              <li><a href="senatorHouse.html">Senate</a></li>
+              <li><a href="./pages/congress/congressHouse.html">House</a></li>
+              <li><a href="./pages/congress/senatorHouse.html">Senate</a></li>
             </ul>
           </div>
           </li>
-          <li id="liMenu2" class="liMenu2">
+          <li id="liMenu" class="liMenu">
             <a class="liSubMenu2" href="#"><img src="./assets/bx-down-arrow.svg" class="arrow">Attendace</a>
             <div class="clickMenu2">
-            <ul class="ulMenu2">
-              <li><a href="attendanceHouse.html">House</a></li>
-              <li><a href="attendanceSenator.html">Senate</a></li>
+            <ul class="ulMenu">
+              <li><a href="./pages/attendance/attendanceHouse.html">House</a></li>
+              <li><a href="./pages/attendance/attendanceSenator.html">Senate</a></li>
             </ul>
             </div>
           </li>
-          <li id="liMenu3" class="liMenu3">
+          <li id="liMenu" class="liMenu">
             <a class="liSubMenu3" href="#"><img src="./assets/bx-down-arrow.svg" class="arrow">Party Lotalty</a>
             <div class="clickMenu3">
-            <ul class="ulMenu3">
-              <li><a href="partyLoyaltyHouse.html">House</a></li>
-              <li><a href="partyLoyaltySenators.html">Senate</a></li>
+            <ul class="ulMenu">
+              <li><a href="./pages/partyLoyalty/partyLoyaltyHouse.html">House</a></li>
+              <li><a href="./pages/partyLoyalty/partyLoyaltySenators.html">Senate</a></li>
           </li>
         </ul>
           </div>
@@ -79,7 +85,7 @@
         </article>  
       </div>
     </main>
-    <footer><p>© 2021 TGIF | All Rights Reserved | <a href="mailto:info@tgif.net">info@tgif.net</a></p></footer>
+    <footer><p>© 2021 TGIF | All Rights Reserved <a href="mailto:info@tgif.net" class="emailMobile">| info@tgif.net</a></p></footer>
     <div class="goTopContainer">
       <div class="goTopBtn">
         <img src="./assets/bx-chevron-up.svg" class="arrowUp">

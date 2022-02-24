@@ -1,24 +1,20 @@
 // HEADER
 const ham = document.getElementById('hamburger');
-const enlaces = document.getElementById('liMenu');
-const enlaces2 = document.getElementById('liMenu2');
-const enlaces3 = document.getElementById('liMenu3');
+const menuContainer = document.querySelector('.menuContainer');
 
 ham.addEventListener('click', () => {
-  enlaces.classList.toggle('activado');
-  enlaces2.classList.toggle('activado');
-  enlaces3.classList.toggle('activado');
   ham.classList.toggle('girar');
+  menuContainer.classList.toggle('activado');
 });
 
-const liSubMenu1 = document.querySelector('.liSubMenu');
+const liSubMenu = document.querySelector('.liSubMenu');
 const liSubMenu2 = document.querySelector('.liSubMenu2');
 const liSubMenu3 = document.querySelector('.liSubMenu3');
 const ulMenu1 = document.querySelector('.clickMenu');
 const ulMenu2 = document.querySelector('.clickMenu2');
 const ulMenu3 = document.querySelector('.clickMenu3');
 
-liSubMenu1.addEventListener('click', () => {
+liSubMenu.addEventListener('click', () => {
   ulMenu1.classList.toggle('activado');
 });
 liSubMenu2.addEventListener('click', () => {
