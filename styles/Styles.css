@@ -32,7 +32,6 @@ footer {
   min-height: 7.5vh;
   background-color: grey;
   font-family: helvetica;
-  box-shadow: 0 0 10px 0 black;
 }
 footer a {
   color: black;
