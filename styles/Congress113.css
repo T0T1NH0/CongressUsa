@@ -79,7 +79,7 @@
   main {
     display: flex;
     flex-direction: column;
-    min-height: 75vh;
+    min-height: 72.5vh;
   }
   section {
     display: flex;
@@ -121,7 +121,8 @@
 
   form:hover {
     background-color: #386364;
-    box-shadow: 0 0 15px 0 #9770f3;
+    box-shadow: 0 0 15px 0 #386364;
+    transform: scale(1.06);
     transition: 0.3s ease-in-out;
   }
 
@@ -146,6 +147,7 @@
   .selector:hover {
     cursor: pointer;
     box-shadow: 0 0 10px 0 white;
+    transform: scale(1.04);
     transition: 0.3s ease-in-out;
   }
 
@@ -153,10 +155,6 @@
   #republican,
   #independent {
     cursor: pointer;
-  }
-
-  #democrat:checked {
-    background-color: red;
   }
 
   .text {

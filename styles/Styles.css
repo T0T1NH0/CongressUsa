@@ -54,6 +54,16 @@ table {
   -moz-box-shadow: 0px 7px 9px 2px rgba(0, 0, 0, 0.6);
 }
 
+body::-webkit-scrollbar {
+  width: 7px;
+  background: grey;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: gold;
+  border-radius: 5px;
+}
+
 .bannerContainer {
   display: flex;
   justify-content: space-between;
@@ -111,6 +121,7 @@ table {
     display: flex;
     align-items: center;
   }
+
   .emailMobile {
     display: none;
   }
@@ -125,12 +136,16 @@ table {
   }
   .emailContainerDesktop p {
     margin: 0px 6px;
-    margin-right: 11px;
+    margin-right: 15px;
   }
   .homeIcon {
     height: 20px;
     width: 19px;
     padding-top: 4.5px;
+  }
+  .liHomeDesktop:hover {
+    transform: scale(1.08);
+    transition: 0.2s;
   }
   .arrow {
     height: 15px;
@@ -177,6 +192,7 @@ table {
   .liMenu:hover {
     background: rgb(165, 161, 161);
     transition: 0.3s all ease-in-out;
+    transform: scale(1.08);
     border-radius: 7px 7px 0px 0px;
   }
 
@@ -190,6 +206,7 @@ table {
     border-radius: 7px;
     width: 90%;
     transition: 0.3s all ease-in-out;
+    box-shadow: 0 0 5px 0 gray;
   }
 
   .liMenu:hover .ulMenu {
@@ -205,6 +222,7 @@ table {
   table:hover {
     box-shadow: 0 0 10px 0 white;
     transition: 0.3s ease-in-out;
+    transform: scale(1.02);
   }
 }
 
