@@ -31,6 +31,8 @@ footer {
   min-width: 320px;
   min-height: 7.5vh;
   background-color: grey;
+  color: white;
+  font-weight: bold;
   font-family: helvetica;
 }
 footer a {
@@ -47,8 +49,11 @@ li {
   list-style-type: none;
 }
 table {
-  box-shadow: 0 0 10px 0 black;
+  box-shadow: 0px 7px 9px 2px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 7px 9px 2px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 7px 9px 2px rgba(0, 0, 0, 0.6);
 }
+
 .bannerContainer {
   display: flex;
   justify-content: space-between;
@@ -87,6 +92,10 @@ table {
   display: none;
 }
 @media (min-width: 1024px) {
+  .bannerContainer p:hover {
+    color: gold;
+    transition: 0.4s all ease-in-out;
+  }
   .menuContainer {
     display: flex;
     justify-content: space-around;
@@ -193,6 +202,10 @@ table {
     transform: rotate(0);
     transition: 0.3s;
   }
+  table:hover {
+    box-shadow: 0 0 10px 0 white;
+    transition: 0.3s ease-in-out;
+  }
 }
 
 @media (max-width: 1022px) {
@@ -281,6 +294,10 @@ table {
 
   .emailContainerDesktop {
     display: none;
+  }
+  .emailMobile {
+    color: white;
+    font-weight: bold;
   }
   .liMenu {
     margin: 4px;

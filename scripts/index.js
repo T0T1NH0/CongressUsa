@@ -27,14 +27,15 @@ liSubMenu3.addEventListener('click', () => {
 // READ MORE / READ LESS BUTTON
 
 let hideTextBtn = document.getElementById('hideTextBtn');
+let buttonRead = document.querySelector('.buttonRead');
 let hideText = document.getElementById('hideText');
 
 const toggleText = () => {
   hideText.classList.toggle('showReadLess');
 
   hideText.classList.contains('showReadLess')
-    ? (hideTextBtn.innerHTML = 'Read Less')
-    : (hideTextBtn.innerHTML = 'Read More');
+    ? (hideTextBtn.innerHTML = 'Read Less')(buttonRead.classList.toggle('less'))
+    : (hideTextBtn.innerHTML = 'Read More')(buttonRead.classList.remove('less'));
 };
 try {
   hideTextBtn.addEventListener('click', () => toggleText());
