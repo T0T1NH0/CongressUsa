@@ -7,11 +7,6 @@ main {
   border: 2px solid white;
 }
 
-.hide:hover {
-  border: 2px solid gold;
-  transition: 0.5s all ease-in-out;
-}
-
 .buttonRead {
   margin: 15px;
   width: 90px;
@@ -97,11 +92,15 @@ main {
   .hide {
     animation: muestraMenu 0.5s ease-in-out;
   }
+  .hide:hover {
+    border: 2px solid gold;
+    transition: 0.5s all ease-in-out;
+  }
   .congressLogo {
-    display: flex;
     height: 200px;
     margin-right: 30px;
   }
+
   .buttonRead {
     margin-left: 40px;
   }

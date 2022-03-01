@@ -86,15 +86,16 @@
     justify-content: space-around;
     align-items: center;
     font-family: helvetica;
+    margin-top: 15px;
   }
 
   .houseContainer {
     width: 50%;
   }
-
   .titleHouse {
-    margin: 10px 0px 10px 0px;
-    margin-left: 17px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 17px;
     color: white;
   }
 
