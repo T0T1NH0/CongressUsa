@@ -112,7 +112,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 20px;
+    height: 9pc;
+    width: 20pc;
+    padding: 20px;
     background-color: #29455a;
     border-radius: 10px;
     box-shadow: 0 0 10px 0 black;
