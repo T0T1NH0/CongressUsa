@@ -227,8 +227,10 @@ body::-webkit-scrollbar-thumb {
   table:hover {
     box-shadow: 0 0 10px 0 white;
     transition: 0.3s ease-in-out;
-    transform: scale(1.02);
   }
+  /* table:hover {
+    background-color: grey;
+  } */
 }
 
 @media (max-width: 1022px) {
@@ -397,8 +399,10 @@ body::-webkit-scrollbar-thumb {
   .tableContainer {
     display: flex;
     text-align: center;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: scroll;
     width: 90%;
+    height: 20pc;
   }
   .sectionTable {
     display: flex;

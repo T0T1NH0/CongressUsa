@@ -1,3 +1,7 @@
+table a {
+  color: black;
+}
+
 @media (max-width: 1024px) {
   .houseContainer {
     display: flex;
