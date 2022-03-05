@@ -1,0 +1,21 @@
+{
+  "name": "congressusa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node ./scripts/Modules/Congress113/congressHouse113.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/T0T1NH0/CongressUsa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/T0T1NH0/CongressUsa/issues"
+  },
+  "homepage": "https://github.com/T0T1NH0/CongressUsa#readme"
+}
