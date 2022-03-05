@@ -1,10 +1,10 @@
-const printTable = (data) => {
+const tdInfo = (info) => {
+  let td = document.createElement('td');
+  td.innerText = info;
+  return td;
+};
+export const printTable = (data) => {
   let tableBody = document.getElementById('tBody');
-  const tdInfo = (info) => {
-    let td = document.createElement('td');
-    td.innerText = info;
-    return td;
-  };
   if (data.length > 0) {
     data.map((members) => {
       let tr = document.createElement('tr');
@@ -36,4 +36,15 @@ const printTable = (data) => {
   }
 };
 
-export default printTable;
+export const printGlance = (dataR, dataD, dataID) => {
+  let trD = document.getElementById('D');
+  let trR = document.getElementById('R');
+  let trID = document.getElementById('ID');
+  let trTotal = document.getElementById('total');
+
+  let total = dataR.length + dataD.length + dataID.length;
+  trD.append(tdInfo(dataD.length));
+  trR.append(tdInfo(dataR.length));
+  trID.append(tdInfo(dataID.length));
+  trTotal.append(tdInfo(total));
+};

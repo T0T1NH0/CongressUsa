@@ -228,9 +228,6 @@ body::-webkit-scrollbar-thumb {
     box-shadow: 0 0 10px 0 white;
     transition: 0.3s ease-in-out;
   }
-  /* table:hover {
-    background-color: grey;
-  } */
 }
 
 @media (max-width: 1022px) {
@@ -275,7 +272,6 @@ body::-webkit-scrollbar-thumb {
     display: none;
     flex-direction: column;
     align-items: flex-end;
-    padding-top: 5x;
     padding-bottom: 10px;
     padding-right: 5px;
     width: 100%;
@@ -284,6 +280,7 @@ body::-webkit-scrollbar-thumb {
   .menuContainer.activado {
     display: flex;
     padding-left: 5px;
+    margin-top: -1px;
     animation: muestraMenu 0.3s ease-in-out both;
   }
   .clickMenu,
@@ -356,7 +353,7 @@ body::-webkit-scrollbar-thumb {
     position: fixed;
     top: 28rem;
     width: 100%;
-    height: 1px;
+    height: 0.1px;
     z-index: -1;
   }
   .goTopBtn {

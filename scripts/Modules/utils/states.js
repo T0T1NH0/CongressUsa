@@ -1,4 +1,4 @@
-const getStateSenate = (data) => {
+export const getState = (data) => {
   let selector = document.getElementById('selector');
   let allState = [];
   data.forEach((member) => {
@@ -13,4 +13,3 @@ const getStateSenate = (data) => {
     selector.appendChild(option);
   });
 };
-export default getStateSenate;
