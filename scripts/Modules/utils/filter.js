@@ -1,3 +1,4 @@
+import { missedVotes } from './glance.js';
 import { printGlance, printTable } from './printTable.js';
 
 let tableBody = document.getElementById('tBody');
@@ -45,4 +46,6 @@ export const filterGance = (data) => {
   let dataD = data.filter((members) => members.party === 'D');
   let dataID = data.filter((members) => members.party === 'ID');
   printGlance(dataR, dataD, dataID);
+  missedVotes(dataR, dataD);
+  // VotedParty(dataR, dataD);
 };
