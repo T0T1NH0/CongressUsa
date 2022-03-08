@@ -18,11 +18,11 @@ const VotedPartyIT = (data, param) => {
   return param;
 };
 
-const Sum = (data, param) => {
+const Sum = (param) => {
+  let data = 0;
   for (let i = 0; i < param.length; i++) {
     data += param[i];
   }
-  let sum = data / param;
   return data;
 };
 
@@ -32,35 +32,15 @@ export const missedVotes = (dataR, dataD) => {
   let partyVD = [];
   let partyVR = [];
 
-  let sumMVD = 0;
-  let sumMVR = 0;
-  let sumPVD = 0;
-  let sumPVR = 0;
+  missedIT(dataD, missedVD);
+  missedIT(dataR, missedVR);
+  VotedPartyIT(dataD, partyVD);
+  VotedPartyIT(dataR, partyVR);
 
-  const mitD = missedIT(dataD, missedVD);
-  const mitR = missedIT(dataR, missedVR);
-  const PartyITD = VotedPartyIT(dataD, partyVD);
-  const PartyITR = VotedPartyIT(dataR, partyVR);
-
-  const missedSumD = Sum(sumMVD, missedVD);
-  const missedSumR = Sum(sumMVR, missedVR);
-  const partySumD = Sum(sumPVD, partyVD);
-  const partySumR = Sum(sumPVR, partyVR);
-
-  let sumMD = missedSumD / missedVD.length;
-  let sumMR = missedSumR / missedVR.length;
-  let sumPD = partySumD / partyVD.length;
-  let sumPR = partySumR / partyVR.length;
-
-  let MVDstring = String(sumMD);
-  let MVRstring = String(sumMR);
-  let PVDstring = String(sumPD);
-  let PVRstring = String(sumPR);
-
-  let MVD = MVDstring.slice(0, 4);
-  let MVR = MVRstring.slice(0, 4);
-  let PVD = PVDstring.slice(0, 5);
-  let PVR = PVRstring.slice(0, 5);
+  let MVD = (Sum(missedVD) / missedVD.length).toFixed(2);
+  let MVR = (Sum(missedVR) / missedVR.length).toFixed(2);
+  let PVD = (Sum(partyVD) / partyVD.length).toFixed(2);
+  let PVR = (Sum(partyVR) / partyVR.length).toFixed(2);
 
   printV(PVD, PVR, MVD, MVR);
 };
