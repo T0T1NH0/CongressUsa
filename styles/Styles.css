@@ -103,6 +103,9 @@ body::-webkit-scrollbar-thumb {
 .hide {
   display: none;
 }
+table a {
+  color: black;
+}
 @media (min-width: 1024px) {
   .bannerContainer p:hover {
     color: gold;
@@ -396,8 +399,8 @@ body::-webkit-scrollbar-thumb {
   .tableContainer {
     display: flex;
     text-align: center;
-    overflow-y: scroll;
-    overflow-x: scroll;
+    overflow-y: auto;
+    overflow-x: auto;
     width: 90%;
     height: 20pc;
   }

@@ -26,7 +26,7 @@ const Sum = (param) => {
   return data;
 };
 
-export const missedVotes = (dataR, dataD) => {
+export const MPVotes = (dataR, dataD) => {
   let missedVD = [];
   let missedVR = [];
   let partyVD = [];

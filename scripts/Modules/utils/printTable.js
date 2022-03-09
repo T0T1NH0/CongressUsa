@@ -68,3 +68,39 @@ export const printV = (PVD, PVR, MVD, MVR) => {
     trR.append(tdInfo(PVR + '%'));
   }
 };
+
+const printTableLM = (data, tbody) => {
+  let tableBody = tbody;
+  tableBody.innerText = '';
+
+  data.forEach((member) => {
+    let tr = document.createElement('tr');
+
+    let nameWithLink = document.createElement('a');
+    nameWithLink.innerText = `${member.last_name} ${member.middle_name || ''} ${
+      member.first_name
+    }`;
+    nameWithLink.href = member.url;
+    nameWithLink.target = '_blank';
+    let tdName = document.createElement('td');
+    tdName.append(nameWithLink);
+    tr.append(tdName);
+
+    tr.append(tdInfo(member.missed_votes));
+    tr.append(tdInfo(`${member.missed_votes_pct.toFixed(2)}%`));
+
+    tableBody.append(tr);
+  });
+};
+
+export const printLeastMost = (least, most) => {
+  let tBodyLeastId = document.getElementById('tBodyLeast');
+  let tBodyMostId = document.getElementById('tBodyMost');
+
+  printTableLM(least, tBodyLeastId);
+  printTableLM(most, tBodyMostId);
+
+  console.log(least);
+  console.log('arriba least y abajo most');
+  console.log(most);
+};

@@ -38,6 +38,9 @@ h2 {
     justify-content: space-around;
     align-items: center;
   }
+  main {
+    min-height: 290vh;
+  }
   .partyLoyaltyContainer {
     display: flex;
     flex-direction: column;
