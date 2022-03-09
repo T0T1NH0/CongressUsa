@@ -21,14 +21,19 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
+    margin-bottom: 30px;
+  }
+  .tableContainer h2 {
+    width: 80%;
   }
   table {
     width: 90%;
   }
-  .tableContainer h2 {
-    width: 80%;
+  main {
+    display: flex;
+    flex-direction: column;
+    height: 77pc;
   }
 }
 
@@ -39,7 +44,9 @@ h2 {
     align-items: center;
   }
   main {
-    min-height: 290vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 113pc;
   }
   .partyLoyaltyContainer {
     display: flex;

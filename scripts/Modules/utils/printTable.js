@@ -40,7 +40,7 @@ export const printGlance = (dataR, dataD, dataID) => {
   let trD = document.getElementById('D');
   let trR = document.getElementById('R');
   let trID = document.getElementById('ID');
-  let trTotal = document.getElementById('total');
+  let trTotal = document.getElementById('Total');
 
   let total = dataR.length + dataD.length + dataID.length;
   trD.append(tdInfo(dataD.length));
@@ -69,7 +69,7 @@ export const printV = (PVD, PVR, MVD, MVR) => {
   }
 };
 
-const printTableLM = (data, tbody) => {
+const printTableLM = (data, tbody, votes, votesPct) => {
   let tableBody = tbody;
   tableBody.innerText = '';
 
@@ -86,21 +86,17 @@ const printTableLM = (data, tbody) => {
     tdName.append(nameWithLink);
     tr.append(tdName);
 
-    tr.append(tdInfo(member.missed_votes));
-    tr.append(tdInfo(`${member.missed_votes_pct.toFixed(2)}%`));
+    tr.append(tdInfo(member.votes));
+    tr.append(tdInfo(member.votesPct + '%'));
 
     tableBody.append(tr);
   });
 };
 
-export const printLeastMost = (least, most) => {
+export const printLeastMost = (least, most, votes, votesPct) => {
   let tBodyLeastId = document.getElementById('tBodyLeast');
   let tBodyMostId = document.getElementById('tBodyMost');
 
-  printTableLM(least, tBodyLeastId);
-  printTableLM(most, tBodyMostId);
-
-  console.log(least);
-  console.log('arriba least y abajo most');
-  console.log(most);
+  printTableLM(least, tBodyLeastId, votes, votesPct);
+  printTableLM(most, tBodyMostId, votes, votesPct);
 };

@@ -10,6 +10,6 @@ if (document.title == 'Attendance | House') {
   filterGance(dataHouse);
   leastMost(dataHouse);
 } else if (document.title == 'Attendance | Senate') {
-  leastMost(dataSenate);
+  filterGance(dataSenate);
   leastMost(dataSenate);
 }
