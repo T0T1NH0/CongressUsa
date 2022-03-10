@@ -8,7 +8,6 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
     color: #fff;
     font-family: helvetica;
@@ -25,7 +24,6 @@ h2 {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: center;
     font-family: helvetica;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -58,10 +56,30 @@ h2 {
     font-family: helvetica;
     margin-top: 15px;
     margin-bottom: 30px;
+    height: 25pc;
     width: 40%;
+    overflow-y: auto;
+    overflow-x: auto;
   }
-  .tableContainer h2 {
-    color: #fff;
+  .AT {
+    height: 21pc;
+  }
+  .AT .tableContainer {
+    height: 13.8pc;
+    padding-top: 15px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+  .desktopTitle {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .h2DesktopLeast {
+    padding-right: 15pc;
+  }
+  .h2DesktopMost {
+    padding-right: 5pc;
   }
 }
 table {

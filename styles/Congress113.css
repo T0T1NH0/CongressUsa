@@ -173,13 +173,13 @@ table a {
   }
 
   .tableContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow-y: auto;
+    overflow-x: auto;
+    height: 20pc;
+    width: 95%;
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
-    width: 95%;
   }
 
   table {

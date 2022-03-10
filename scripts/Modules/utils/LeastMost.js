@@ -1,7 +1,7 @@
 import { printLeastMost } from './printTable.js';
 
 export const leastMost = (data) => {
-  var pct = (data.length / 10).toFixed(0);
+  let pct = (data.length / 10).toFixed(0);
 
   if (document.title == 'Attendance | House' || document.title == 'Attendance | Senate') {
     let MVM = data.sort((M1, M2) => {
@@ -14,11 +14,7 @@ export const leastMost = (data) => {
 
     let MVL = MVM.reverse();
     let MVLPct = MVL.slice(0, pct);
-
-    let missedV = '.missed_votes';
-    let missedVPct = '.missed_votes_pct';
-
-    printLeastMost(MVLPct, MVMPct, missedV, missedVPct);
+    printLeastMost(MVLPct, MVMPct);
   } else if (
     document.title == 'Party Loyalty | House' ||
     document.title == 'Party Loyalty | Senate'
@@ -28,14 +24,12 @@ export const leastMost = (data) => {
         return -1;
       }
     });
-    let PVLPct = PVL.slice(6, 52);
+
+    let PVLPct = PVL.slice(0, pct);
 
     let PVM = PVL.reverse();
-    let PVMPct = PVM.slice(0, 46);
-
-    let missedV = '.total_votes';
-    let missedVPct = '.votes_with_party_pct';
-
-    printLeastMost(PVLPct, PVMPct, missedV, missedVPct);
+    let PVMPct = PVM.slice(0, pct);
+    console.log(PVMPct);
+    printLeastMost(PVLPct, PVMPct);
   }
 };

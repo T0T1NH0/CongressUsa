@@ -69,10 +69,9 @@ export const printV = (PVD, PVR, MVD, MVR) => {
   }
 };
 
-const printTableLM = (data, tbody, votes, votesPct) => {
+const printMV = (data, tbody) => {
   let tableBody = tbody;
   tableBody.innerText = '';
-
   data.forEach((member) => {
     let tr = document.createElement('tr');
 
@@ -86,17 +85,47 @@ const printTableLM = (data, tbody, votes, votesPct) => {
     tdName.append(nameWithLink);
     tr.append(tdName);
 
-    tr.append(tdInfo(member.votes));
-    tr.append(tdInfo(member.votesPct + '%'));
+    tr.append(tdInfo(member.missed_votes));
+    tr.append(tdInfo(`${member.missed_votes_pct}%`));
 
     tableBody.append(tr);
   });
 };
 
-export const printLeastMost = (least, most, votes, votesPct) => {
+const printPV = (data, tbody) => {
+  let tableBody = tbody;
+  tableBody.innerText = '';
+  data.forEach((member) => {
+    let tr = document.createElement('tr');
+
+    let nameWithLink = document.createElement('a');
+    nameWithLink.innerText = `${member.last_name} ${member.middle_name || ''} ${
+      member.first_name
+    }`;
+    nameWithLink.href = member.url;
+    nameWithLink.target = '_blank';
+    let tdName = document.createElement('td');
+    tdName.append(nameWithLink);
+    tr.append(tdName);
+
+    tr.append(tdInfo(member.total_votes));
+    tr.append(tdInfo(`${member.votes_with_party_pct.toFixed(2)}%`));
+
+    tableBody.append(tr);
+  });
+};
+export const printLeastMost = (least, most) => {
   let tBodyLeastId = document.getElementById('tBodyLeast');
   let tBodyMostId = document.getElementById('tBodyMost');
 
-  printTableLM(least, tBodyLeastId, votes, votesPct);
-  printTableLM(most, tBodyMostId, votes, votesPct);
+  if (document.title == 'Attendance | House' || document.title == 'Attendance | Senate') {
+    printMV(least, tBodyLeastId);
+    printMV(most, tBodyMostId);
+  } else if (
+    document.title == 'Party Loyalty | House' ||
+    document.title == 'Party Loyalty | Senate'
+  ) {
+    printPV(least, tBodyLeastId);
+    printPV(most, tBodyMostId);
+  }
 };

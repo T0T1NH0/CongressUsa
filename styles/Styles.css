@@ -227,10 +227,6 @@ table a {
     transition: 0.3s;
     box-shadow: 0 0 10px 0 rgb(165, 161, 161);
   }
-  table:hover {
-    box-shadow: 0 0 10px 0 white;
-    transition: 0.3s ease-in-out;
-  }
   .h2Mobile {
     display: none;
   }
@@ -407,6 +403,10 @@ table a {
     width: 90%;
     height: 20pc;
   }
+  .h2Mobile {
+    width: 87%;
+    text-align: center;
+  }
   .sectionTable {
     display: flex;
     flex-direction: column;
@@ -422,7 +422,10 @@ table a {
   table {
     width: 100%;
   }
-  .h2Desktop {
+  .h2DesktopLeast {
+    display: none;
+  }
+  .h2DesktopMost {
     display: none;
   }
 }
