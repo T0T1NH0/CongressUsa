@@ -1,3 +1,5 @@
+let loading = document.getElementById('loading');
+
 const tdInfo = (info) => {
   let td = document.createElement('td');
   td.innerText = info;
@@ -5,6 +7,9 @@ const tdInfo = (info) => {
 };
 export const printTable = (data) => {
   let tableBody = document.getElementById('tBody');
+  try {
+    tableBody.removeChild(loading);
+  } catch (error) {}
   if (data.length > 0) {
     data.map((members) => {
       let tr = document.createElement('tr');
@@ -30,7 +35,7 @@ export const printTable = (data) => {
     let tr = document.createElement('tr');
     let td = document.createElement('td');
     td.setAttribute('colspan', '5');
-    td.innerText = 'No Results Found, please my family is about to die check the filter';
+    td.innerText = 'No Results Found, Please check the filter';
     tr.append(td);
     tableBody.append(tr);
   }
@@ -41,6 +46,11 @@ export const printGlance = (dataR, dataD, dataID) => {
   let trR = document.getElementById('R');
   let trID = document.getElementById('ID');
   let trTotal = document.getElementById('Total');
+  let tableBody = document.getElementById('tBodyGlance');
+
+  try {
+    tableBody.removeChild(loading);
+  } catch (error) {}
 
   let total = dataR.length + dataD.length + dataID.length;
   trD.append(tdInfo(dataD.length));
@@ -72,6 +82,9 @@ export const printV = (PVD, PVR, MVD, MVR) => {
 const printMV = (data, tbody) => {
   let tableBody = tbody;
   tableBody.innerText = '';
+  try {
+    tableBody.removeChild(loading);
+  } catch (error) {}
   data.forEach((member) => {
     let tr = document.createElement('tr');
 
@@ -95,6 +108,9 @@ const printMV = (data, tbody) => {
 const printPV = (data, tbody) => {
   let tableBody = tbody;
   tableBody.innerText = '';
+  try {
+    tableBody.removeChild(loading);
+  } catch (error) {}
   data.forEach((member) => {
     let tr = document.createElement('tr');
 
