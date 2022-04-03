@@ -5,7 +5,7 @@ table a {
 @media (max-width: 1024px) {
   .houseContainer {
     display: flex;
-    flex-direction: column;
+    flex-direction: column ;
     justify-content: center;
     text-align: center;
     align-items: center;
